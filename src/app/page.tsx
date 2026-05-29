@@ -90,7 +90,7 @@ export default function Home() {
             className="space-y-4"
           >
             <p className="section-subheading tracking-[0.45em] text-xs md:text-sm">
-              [ {yearsActive} Años de Devastación Underground ]
+              [ {yearsActive} Años de Este Carnaval de Sangre]
             </p>
 
             <h1 
