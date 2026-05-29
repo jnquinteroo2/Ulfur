@@ -1,6 +1,6 @@
 const SOCIALS = [
   {
-    href: "https://facebook.com/Ulfur",
+    href: "https://www.facebook.com/share/18mKdQoAUV/",
     label: "Facebook",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -9,7 +9,7 @@ const SOCIALS = [
     ),
   },
   {
-    href: "https://instagram.com/ulfur_band",
+    href: "https://www.instagram.com/ulfur.band?igsh=MW5qM3FiOGg0cHlr",
     label: "Instagram",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
