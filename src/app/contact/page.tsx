@@ -3,26 +3,42 @@
 import { useState } from "react";
 import ScrollReveal from "@/components/ScrollReveal";
 import { Mail, Phone, MapPin, Music2 } from "lucide-react";
-
-const SOCIALS = [
-  { label: "Facebook", href: "https://facebook.com/Ulfur" },
-  { label: "Instagram", href: "https://instagram.com/ulfur_band" },
-  { label: "TikTok", href: "https://tiktok.com/@ulfur.band" },
-  { label: "Spotify", href: "https://open.spotify.com/artist/ulfur-band" },
-  { label: "YouTube", href: "https://youtube.com/@ulfur.band" },
-];
+import { SOCIALS } from "@/constants/socials";
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [isSending, setIsSending] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSending(true);
+
+    const formData = new FormData(e.currentTarget);
+    const data = Object.fromEntries(formData);
+
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/svarturulfur5@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify(data)
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+      }
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setIsSending(false);
+    }
   };
 
   return (
-    <div className="min-h-screen bg-void pt-16 md:pt-24">
-      <section className="grain relative mx-auto max-w-7xl px-6 pt-4 pb-16 md:py-16">
+    <div className="min-h-screen bg-void pt-16 md:pt-24 relative">
+      <section className="grain relative mx-auto max-w-7xl px-6 pt-4 pb-32 md:pb-40">
         <div className="relative z-10">
           <ScrollReveal>
             <p className="section-subheading mb-2">Contacto</p>
@@ -30,7 +46,6 @@ export default function ContactPage() {
               Contacto
             </h1>
           </ScrollReveal>
-
           <div className="grid gap-12 lg:grid-cols-2">
             <ScrollReveal delay={0.1}>
               {submitted ? (
@@ -56,6 +71,8 @@ export default function ContactPage() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
+                  <input type="hidden" name="_subject" value="Nuevo mensaje desde la Web Oficial de ULFUR" />
+                  <input type="hidden" name="_captcha" value="false" />
                   <div>
                     <label
                       htmlFor="name"
@@ -72,12 +89,11 @@ export default function ContactPage() {
                       id="name"
                       name="name"
                       required
-                      className="w-full border border-silver/10 bg-ash/10 px-4 py-3 text-silver/80 outline-none transition-colors focus:border-silver"
+                      className="w-full border border-silver/10 bg-white text-black px-4 py-3 outline-none transition-colors focus:border-red-600 placeholder-neutral-500"
                       style={{ fontSize: "var(--text-small)" }}
                       placeholder="Tu nombre"
                     />
                   </div>
-
                   <div>
                     <label
                       htmlFor="email"
@@ -94,13 +110,12 @@ export default function ContactPage() {
                       id="email"
                       name="email"
                       required
-                      className="w-full border border-silver/10 bg-ash/10 px-4 py-3 text-silver/80 outline-none transition-colors focus:border-silver"
+                      className="w-full border border-silver/10 bg-white text-black px-4 py-3 outline-none transition-colors focus:border-red-600 placeholder-neutral-500"
                       style={{ fontSize: "var(--text-small)" }}
                       placeholder="tu@email.com"
                     />
                   </div>
- 
-                 <div>
+                  <div>
                     <label
                       htmlFor="message"
                       className="mb-1 block uppercase tracking-[0.15em] text-silver/50"
@@ -116,22 +131,22 @@ export default function ContactPage() {
                       name="message"
                       required
                       rows={5}
-                      className="w-full resize-none border border-silver/10 bg-ash/10 px-4 py-3 text-silver/80 outline-none transition-colors focus:border-silver"
+                      className="w-full resize-none border border-silver/10 bg-white text-black px-4 py-3 outline-none transition-colors focus:border-red-600 placeholder-neutral-500"
                       style={{ fontSize: "var(--text-small)" }}
-                      placeholder="Escrib&iacute; tu mensaje..."
+                      placeholder="Escribí tu mensaje..."
                     />
                   </div>
-
                   <button
                     type="submit"
-                    className="btn-dark w-full justify-center"
+                    disabled={isSending}
+                    className="btn-dark w-full justify-center disabled:opacity-50 disabled:cursor-not-allowed"
+                    aria-label="Enviar mensaje de contacto"
                   >
-                    Enviar Mensaje
+                    {isSending ? "Enviando..." : "Enviar Mensaje"}
                   </button>
                 </form>
               )}
             </ScrollReveal>
-
             <ScrollReveal delay={0.3}>
               <div className="space-y-8">
                 <div className="border border-silver/10 bg-ash/10 p-6">
@@ -150,6 +165,7 @@ export default function ContactPage() {
                       <a
                         href="mailto:svarturulfur5@gmail.com"
                         className="text-silver/50 transition-colors hover:text-white"
+                        aria-label="Enviar email a svarturulfur5@gmail.com"
                       >
                         svarturulfur5@gmail.com
                       </a>
@@ -162,7 +178,6 @@ export default function ContactPage() {
                     </div>
                   </div>
                 </div>
-
                 <div className="border border-silver/10 bg-ash/10 p-6">
                   <h3
                     className="mb-4 uppercase tracking-[0.15em] text-silver/50"
@@ -184,6 +199,7 @@ export default function ContactPage() {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center gap-3 text-silver/40 transition-colors hover:text-white"
+                        aria-label={`Ir a ${social.label}`}
                       >
                         <Music2 size={14} className="flex-shrink-0" />
                         {social.label}
@@ -191,7 +207,6 @@ export default function ContactPage() {
                     ))}
                   </div>
                 </div>
-
                 <div className="border border-silver/10 bg-ash/10 p-6">
                   <h3
                     className="mb-4 uppercase tracking-[0.15em] text-silver/50"
@@ -200,7 +215,7 @@ export default function ContactPage() {
                       fontSize: "var(--text-small)",
                     }}
                   >
-                    Sello Discogr&aacute;fico
+                    Sello Discográfico
                   </h3>
                   <p
                     className="text-silver/50"

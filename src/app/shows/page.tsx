@@ -45,14 +45,13 @@ const FLAGS: Record<string, string> = {
 
 export default function ShowsPage() {
   return (
-    <div className="min-h-screen bg-void pt-16 md:pt-24">
-      <section className="grain relative mx-auto max-w-7xl px-6 pt-4 pb-16 md:py-16">
+    <div className="min-h-screen bg-void pt-16 md:pt-24 relative">
+      <section className="grain relative mx-auto max-w-7xl px-6 pt-4 pb-32 md:pb-40">
         <div className="relative z-10">
           <ScrollReveal>
             <p className="section-subheading mb-2">Shows</p>
             <h1 className="section-heading mb-12">En Vivo</h1>
           </ScrollReveal>
-
           <div className="grid gap-12 lg:grid-cols-2">
             <div className="space-y-8">
               <ScrollReveal delay={0.1}>
@@ -74,7 +73,6 @@ export default function ShowsPage() {
                   </p>
                 </div>
               </ScrollReveal>
-
               <ScrollReveal delay={0.2}>
                 <h3
                   className="mb-4 uppercase tracking-[0.2em] text-silver/40"
@@ -98,7 +96,6 @@ export default function ShowsPage() {
                 </div>
               </ScrollReveal>
             </div>
-
             <ScrollReveal delay={0.3}>
               <h3
                 className="mb-4 uppercase tracking-[0.2em] text-silver/40"

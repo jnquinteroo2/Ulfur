@@ -1,45 +1,50 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useMemo } from "react";
 
 const PARTICLE_COUNT = 50;
 
 export default function AshParticles() {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const prefersReducedMotion =
+    typeof window !== "undefined"
+      ? window.matchMedia("(prefers-reduced-motion: reduce)").matches
+      : false;
 
-  useEffect(() => {
-    const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
-    if (prefersReducedMotion) return;
-
-    const container = containerRef.current;
-    if (!container) return;
-
-    const fragments: HTMLDivElement[] = [];
-
-    for (let i = 0; i < PARTICLE_COUNT; i++) {
-      const particle = document.createElement("div");
-      particle.className = "ash-particle";
-      particle.style.setProperty("--fall-duration", `${6 + Math.random() * 6}s`);
-      particle.style.setProperty("--fall-delay", `${Math.random() * 8}s`);
-      particle.style.setProperty("--start-x", `${Math.random() * 100}%`);
-      particle.style.width = `${1 + Math.random() * 2}px`;
-      particle.style.height = particle.style.width;
-      container.appendChild(particle);
-      fragments.push(particle);
-    }
-
-    return () => {
-      fragments.forEach((p) => p.remove());
-    };
-  }, []);
+  const particles = useMemo(() => {
+    if (prefersReducedMotion) return [];
+    return Array.from({ length: PARTICLE_COUNT }, (_, i) => {
+      const size = `${1 + Math.random() * 2}px`;
+      return {
+        id: i,
+        fallDuration: `${6 + Math.random() * 6}s`,
+        fallDelay: `${Math.random() * 8}s`,
+        startX: `${Math.random() * 100}%`,
+        width: size,
+        height: size,
+      };
+    });
+  }, [prefersReducedMotion]);
 
   return (
     <div
-      ref={containerRef}
       className="pointer-events-none absolute inset-0 overflow-hidden"
       aria-hidden="true"
-    />
+    >
+      {particles.map((p) => (
+        <div
+          key={p.id}
+          className="ash-particle"
+          style={
+            {
+              "--fall-duration": p.fallDuration,
+              "--fall-delay": p.fallDelay,
+              "--start-x": p.startX,
+              width: p.width,
+              height: p.height,
+            } as React.CSSProperties
+          }
+        />
+      ))}
+    </div>
   );
 }

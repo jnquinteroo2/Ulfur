@@ -9,6 +9,7 @@ const NAV_LINKS = [
   { href: "/bio", label: "Bio" },
   { href: "/members", label: "Integrantes" },
   { href: "/discography", label: "Discografía" },
+  { href: "/gallery", label: "Galería" },
   { href: "/store", label: "Tienda" },
   { href: "/shows", label: "Shows" },
   { href: "/contact", label: "Contacto" },

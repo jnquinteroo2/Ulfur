@@ -4,14 +4,13 @@ import ScrollReveal from "@/components/ScrollReveal";
 
 export default function BioPage() {
   return (
-    <div className="min-h-screen bg-void pt-16 md:pt-24">
-      <section className="grain relative mx-auto max-w-7xl px-6 pt-4 pb-16 md:py-16">
+    <div className="min-h-screen bg-void pt-16 md:pt-24 relative">
+      <section className="grain relative mx-auto max-w-7xl px-6 pt-4 pb-32 md:pb-40">
         <div className="relative z-10">
           <ScrollReveal>
             <p className="section-subheading mb-2">Biografía</p>
             <h1 className="section-heading mb-12">La Historia</h1>
           </ScrollReveal>
-
           <div className="grid gap-12 lg:grid-cols-2">
             <div className="space-y-6">
               <ScrollReveal delay={0.1}>
@@ -24,7 +23,6 @@ export default function BioPage() {
                   </blockquote>
                 </div>
               </ScrollReveal>
-
               <ScrollReveal delay={0.2}>
                 <div
                   className="space-y-4 leading-relaxed text-silver/60"
@@ -39,7 +37,7 @@ export default function BioPage() {
                   <p>
                     La banda se formó con la visión de crear música extrema que
                     explorara temáticas de violencia, salud mental, dolor y hechos
-                    históricos, reflejando las realidades y el sufrimiento que marcan la
+                    históricos, reflejando las realidades and el sufrimiento que marcan la
                     existencia humana.
                   </p>
                   <p>
@@ -58,23 +56,15 @@ export default function BioPage() {
                 </div>
               </ScrollReveal>
             </div>
-
             <ScrollReveal delay={0.3}>
               <div className="space-y-8">
                 <div className="relative aspect-[4/5] w-full overflow-hidden bg-ash/10 border border-silver/10 grain">
-                  <div className="relative z-10 flex h-full items-center justify-center">
-                    <p
-                      className="text-silver/10"
-                      style={{
-                        fontFamily: "var(--font-cinzel)",
-                        fontSize: "var(--text-h1)",
-                      }}
-                    >
-                      ULFUR
-                    </p>
-                  </div>
+                  <img
+                    src="https://res.cloudinary.com/dfkd8tzhs/image/upload/q_auto/f_auto/v1780508901/Grupal_2_ytmm2g.jpg"
+                    alt="ULFUR Banda"
+                    className="h-full w-full object-cover grayscale transition-all duration-500 hover:grayscale-0"
+                  />
                 </div>
-
                 <div className="space-y-4">
                   <h3
                     className="uppercase tracking-[0.2em] text-silver/40"
@@ -85,7 +75,6 @@ export default function BioPage() {
                   >
                     Línea de Tiempo
                   </h3>
-
                   <div className="relative border-l border-silver/10 pl-6 space-y-6">
                     {[
                       {

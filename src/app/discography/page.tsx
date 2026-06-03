@@ -12,6 +12,7 @@ const DISCOGRAPHY = [
     label: null,
     format: "Digital",
     featured: false,
+    image: "https://res.cloudinary.com/dfkd8tzhs/image/upload/q_auto/f_auto/v1780509736/223533150_467091304488042_626095670244153850_n_rx3wu1.jpg",
   },
   {
     year: "2017",
@@ -21,6 +22,7 @@ const DISCOGRAPHY = [
     label: null,
     format: "Digital",
     featured: false,
+    image: "https://res.cloudinary.com/dfkd8tzhs/image/upload/q_auto/f_auto/v1780510213/3540516107_logo_rjsve8.jpg"
   },
   {
     year: "2022",
@@ -37,20 +39,20 @@ const DISCOGRAPHY = [
     format: "Cassette, CD y Digital",
     releaseDate: "19 Nov 2022",
     featured: true,
+    image: "https://res.cloudinary.com/dfkd8tzhs/image/upload/q_auto/f_auto/v1780510024/632x632bb_d2cwbh.png"
   },
 ];
 
 export default function DiscographyPage() {
   return (
-    <div className="min-h-screen bg-void pt-16 md:pt-24">
-      <section className="grain relative mx-auto max-w-7xl px-6 pt-4 pb-16 md:py-16">
+    <div className="min-h-screen bg-void pt-16 md:pt-24 relative">
+      <section className="grain relative mx-auto max-w-7xl px-6 pt-4 pb-32 md:pb-40">
         <div className="relative z-10">
           <ScrollReveal>
             <p className="section-subheading mb-2">Discografía</p>
             <h1 className="section-heading mb-12">Lanzamientos</h1>
           </ScrollReveal>
         </div>
-
         <div className="grid gap-8 lg:grid-cols-3 relative z-10">
           {DISCOGRAPHY.map((release, i) => (
             <ScrollReveal
@@ -58,9 +60,9 @@ export default function DiscographyPage() {
               delay={i * 0.15}
             >
               <div
-                className={`group relative overflow-hidden bg-ash/10 border border-silver/10 transition-all duration-300 ${
+                className={`group relative overflow-hidden bg-ash/10 border border-silver/10 transition-all duration-300 h-full flex flex-col ${
                   release.featured
-                    ? "lg:col-span-1 hover:border-silver"
+                    ? "hover:border-silver"
                     : "hover:border-silver/20"
                 }`}
               >
@@ -77,60 +79,64 @@ export default function DiscographyPage() {
                     </span>
                   </div>
                 )}
-
-                <div className="flex aspect-square items-center justify-center bg-ash/20">
-                  <div className="text-center">
-                    <span
-                      className="block text-silver/10"
+                <div className="relative flex aspect-square items-center justify-center bg-ash/20 overflow-hidden flex-shrink-0">
+                  {release.image ? (
+                    <img
+                      src={release.image}
+                      alt={`Portada de ${release.title}`}
+                      className="h-full w-full object-cover"
+                    />
+                  ) : (
+                    <div className="text-center">
+                      <span
+                        className="block text-silver/10"
+                        style={{
+                          fontFamily: "var(--font-cinzel)",
+                          fontSize: "var(--text-h2)",
+                        }}
+                      >
+                        {release.year}
+                      </span>
+                    </div>
+                  )}
+                </div>
+                <div className="p-6 flex-1 flex flex-col">
+                  <div>
+                    {release.releaseDate && (
+                      <span
+                        className="uppercase tracking-widest text-silver/50"
+                        style={{
+                          fontFamily: "var(--font-barlow-condensed)",
+                          fontSize: "var(--text-badge)",
+                        }}
+                      >
+                        {release.releaseDate}
+                      </span>
+                    )}
+                    <h3
+                      className="mt-1 text-silver/80"
                       style={{
                         fontFamily: "var(--font-cinzel)",
-                        fontSize: "var(--text-h2)",
+                        fontSize: "var(--text-h3)",
                       }}
                     >
-                      {release.year}
-                    </span>
+                      {release.title}
+                    </h3>
+                    <p
+                      className="mt-1 text-silver/30"
+                      style={{ fontSize: "var(--text-small)" }}
+                    >
+                      {release.studio}
+                    </p>
+                    <p
+                      className="mt-1 uppercase tracking-wider text-silver/40"
+                      style={{ fontSize: "var(--text-small)" }}
+                    >
+                      {release.format}
+                    </p>
                   </div>
-                </div>
-
-                <div className="p-6">
-                  {release.releaseDate && (
-                    <span
-                      className="uppercase tracking-widest text-silver/50"
-                      style={{
-                        fontFamily: "var(--font-barlow-condensed)",
-                        fontSize: "var(--text-badge)",
-                      }}
-                    >
-                      {release.releaseDate}
-                    </span>
-                  )}
-
-                  <h3
-                    className="mt-1 text-silver/80"
-                    style={{
-                      fontFamily: "var(--font-cinzel)",
-                      fontSize: "var(--text-h3)",
-                    }}
-                  >
-                    {release.title}
-                  </h3>
-
-                  <p
-                    className="mt-1 text-silver/30"
-                    style={{ fontSize: "var(--text-small)" }}
-                  >
-                    {release.studio}
-                  </p>
-
-                  <p
-                    className="mt-1 uppercase tracking-wider text-silver/40"
-                    style={{ fontSize: "var(--text-small)" }}
-                  >
-                    {release.format}
-                  </p>
-
                   {release.tracks.length > 0 && (
-                    <div className="mt-4 space-y-1 border-t border-silver/10 pt-4">
+                    <div className="mt-auto space-y-1 border-t border-silver/10 pt-4">
                       {release.tracks.map((track, j) => (
                         <div
                           key={track}
@@ -146,7 +152,6 @@ export default function DiscographyPage() {
                             </span>
                             {track}
                           </span>
-
                           {release.featured && (
                             <span className="flex gap-1">
                               <a

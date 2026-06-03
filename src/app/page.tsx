@@ -24,12 +24,12 @@ const PLATFORMS = [
       </svg>
     ),
   },
-  {
+{
     name: "Apple Music",
     href: "https://music.apple.com/us/album/circulo-de-fuego-ep/1655670769",
     icon: (
       <svg viewBox="0 0 24 24" className="w-5 h-5 text-silver/60 group-hover:text-white transition-colors" fill="currentColor">
-        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm3.3 13.43c-.15.3-.43.51-.76.51H11.5v2.17c0 .5-.38.91-.87.91s-.88-.41-.88-.91V10.2c0-.52.4-.95.91-.95h3.19c1.04 0 1.88.79 1.88 1.81l.01 1.93c0 .59-.22 1.12-.54 1.44z" />
+        <path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.56-1.702z" />
       </svg>
     ),
   },
@@ -44,7 +44,7 @@ export default function Home() {
         <AshParticles />
 
         <div className="absolute left-6 top-1/2 -translate-y-1/2 uppercase text-[9px] tracking-[0.6em] text-silver/10 write-vertical hidden lg:block select-none" style={{ writingMode: "vertical-rl" }}>
-          M Z · N Q · N A · J F // U L F U R
+          M Z · N Q · N A · J F · V D // U L F U R
         </div>
         
         <div className="absolute right-6 top-1/2 -translate-y-1/2 uppercase text-[9px] tracking-[0.6em] text-silver/10 write-vertical hidden lg:block select-none" style={{ writingMode: "vertical-rl" }}>
@@ -90,21 +90,21 @@ export default function Home() {
             className="space-y-4"
           >
             <p className="section-subheading tracking-[0.45em] text-xs md:text-sm">
-              [ {yearsActive} Años de Este Carnaval de Sangre]
+              {yearsActive} Años de Este Carnaval de Sangre
             </p>
 
             <h1 
               className="text-silver/90 font-medium tracking-[0.2em] text-3xl md:text-4xl lg:text-5xl uppercase select-text"
               style={{ fontFamily: "var(--font-cinzel)" }}
             >
-              Thrash Death Black Metal
+              THRASH DEATH BLACK METAL
             </h1>
 
             <p
               className="italic text-silver/40 text-base md:text-lg max-w-2xl mx-auto font-light leading-relaxed px-4"
               style={{ fontFamily: "var(--font-crimson-text)" }}
             >
-              &ldquo;Sonido visceral de la vieja escuela del metal extremo, con una explosión sonora impregnada de sangre y muerte.&rdquo;
+              &ldquo;Sonido visceral de la vieja escuela del metal extremo con contundencia, impregnada de sangre, dolor y muerte.&rdquo;
             </p>
           </motion.div>
         </div>
@@ -120,7 +120,7 @@ export default function Home() {
               CÍRCULO DE FUEGO
             </h2>
             <p className="text-silver/50 leading-relaxed text-sm md:text-base max-w-md mb-6" style={{ fontFamily: "var(--font-crimson-text)" }}>
-              Grabado y producido bajo la alianza infernal con el sello norteamericano Warframe Records de Nueva York. Disponible en formatos físicos y distribución global.
+              Grabado y producido bajo la alianza infernal con el sello norteamericano **Warframe Records** de Nueva York. Disponible en formatos físicos de culto y distribución global.
             </p>
             
             <div className="border-t border-b border-silver/10 py-3 mb-6 space-y-2 text-xs uppercase tracking-wider text-silver/40" style={{ fontFamily: "var(--font-barlow-condensed)" }}>
@@ -133,7 +133,7 @@ export default function Home() {
 
           <div className="border border-silver/10 bg-zinc-950/40 p-6 md:p-8 flex flex-col gap-6">
             <span className="uppercase tracking-[0.25em] text-silver/40 font-bold text-xs" style={{ fontFamily: "var(--font-barlow-condensed)" }}>
-              Escuchar o Adquirir Copia Digital:
+              Escucha o Adquirir Copia Digital:
             </span>
             <div className="grid gap-3">
               {PLATFORMS.map((platform) => (
@@ -154,6 +154,39 @@ export default function Home() {
                 </a>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="w-full max-w-5xl px-6 py-24 relative z-10 flex flex-col items-center">
+        <div className="text-center mb-14">
+          <span className="uppercase tracking-[0.25em] text-silver/30 font-bold text-xs" style={{ fontFamily: "var(--font-barlow-condensed)" }}>
+          </span>
+          <h2 className="text-silver tracking-[0.1em] uppercase text-2xl md:text-3xl mt-2" style={{ fontFamily: "var(--font-cinzel)" }}>
+            Videos Oficiales
+          </h2>
+        </div>
+
+        <div className="grid gap-8 md:grid-cols-2 w-full">
+          <div className="w-full aspect-video border border-silver/10 bg-black shadow-[0_0_30px_rgba(0,0,0,0.8)]">
+            <iframe
+              className="w-full h-full"
+              src="https://www.youtube.com/embed/2chNMmb9Oww?si=xu_7xKz66YVA8E-g"
+              title="ULFUR - Video Oficial 1"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            />
+          </div>
+          <div className="w-full aspect-video border border-silver/10 bg-black shadow-[0_0_30px_rgba(0,0,0,0.8)]">
+            <iframe
+              className="w-full h-full"
+              src="https://www.youtube.com/embed/kT_Nc2XzLaA?si=6EgeLVgwLF8VoDYw"
+              title="ULFUR - Video Oficial 2"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            />
           </div>
         </div>
       </section>
