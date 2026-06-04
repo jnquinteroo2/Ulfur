@@ -17,7 +17,7 @@ const PLATFORMS = [
   },
   {
     name: "Spotify",
-    href: "https://open.spotify.com/album/4xW8Y7VvDclKckhy1yIQOz",
+    href: "https://open.spotify.com/intl-es/album/18q5grZ4siUIUVNvoaNJi2?si=bqhGaWsxS72XzxP9xJeQOg",
     icon: (
       <svg viewBox="0 0 24 24" className="w-5 h-5 text-silver/60 group-hover:text-white transition-colors" fill="currentColor">
         <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm5.503 17.306c-.215.353-.678.463-1.03.249-2.856-1.744-6.452-2.134-10.683-1.17-.407.092-.816-.164-.908-.571-.092-.408.164-.817.572-.91 4.63-1.054 8.59-.6 11.78 1.345.353.214.464.678.249 1.031zm1.467-3.262c-.272.443-.85.59-1.294.318-3.268-2.01-8.254-2.592-12.12-1.42-.497.15-1.022-.13-1.172-.627-.15-.497.13-1.023.627-1.173 4.415-1.34 9.91-.694 13.643 1.6.444.273.59.852.317 1.296l-.001.006zm.126-3.393C15.424 8.314 9.364 8.113 5.86 9.176c-.563.17-1.157-.147-1.328-.712-.17-.563.147-1.156.712-1.328 4.026-1.222 10.722-1.002 14.94 1.505.507.301.673.957.372 1.464-.301.507-.957.673-1.464.372z" />
@@ -44,7 +44,7 @@ export default function Home() {
         <AshParticles />
 
         <div className="absolute left-6 top-1/2 -translate-y-1/2 uppercase text-[9px] tracking-[0.6em] text-silver/10 write-vertical hidden lg:block select-none" style={{ writingMode: "vertical-rl" }}>
-          M Z · N Q · N A · J F · V D // U L F U R
+          M Z · J F · N Q · N A · V D // U L F U R
         </div>
         
         <div className="absolute right-6 top-1/2 -translate-y-1/2 uppercase text-[9px] tracking-[0.6em] text-silver/10 write-vertical hidden lg:block select-none" style={{ writingMode: "vertical-rl" }}>
@@ -97,14 +97,14 @@ export default function Home() {
               className="text-silver/90 font-medium tracking-[0.2em] text-3xl md:text-4xl lg:text-5xl uppercase select-text"
               style={{ fontFamily: "var(--font-cinzel)" }}
             >
-              THRASH DEATH BLACK METAL
+              THRASH BLACK DEATH METAL
             </h1>
 
             <p
               className="italic text-silver/40 text-base md:text-lg max-w-2xl mx-auto font-light leading-relaxed px-4"
               style={{ fontFamily: "var(--font-crimson-text)" }}
             >
-              &ldquo;Sonido visceral de la vieja escuela del metal extremo con contundencia, impregnada de sangre, dolor y muerte.&rdquo;
+              &ldquo;Sonido visceral de la vieja escuela del metal extremo, impregnado de sangre y muerte.&rdquo;
             </p>
           </motion.div>
         </div>
@@ -120,7 +120,7 @@ export default function Home() {
               CÍRCULO DE FUEGO
             </h2>
             <p className="text-silver/50 leading-relaxed text-sm md:text-base max-w-md mb-6" style={{ fontFamily: "var(--font-crimson-text)" }}>
-              Grabado y producido bajo la alianza infernal con el sello norteamericano **Warframe Records** de Nueva York. Disponible en formatos físicos de culto y distribución global.
+              Grabado y producido bajo la alianza infernal con el sello norteamericano <b>Warframe Records</b> de Nueva York. Disponible en formatos físicos de culto y distribución global.
             </p>
             
             <div className="border-t border-b border-silver/10 py-3 mb-6 space-y-2 text-xs uppercase tracking-wider text-silver/40" style={{ fontFamily: "var(--font-barlow-condensed)" }}>
@@ -133,7 +133,7 @@ export default function Home() {
 
           <div className="border border-silver/10 bg-zinc-950/40 p-6 md:p-8 flex flex-col gap-6">
             <span className="uppercase tracking-[0.25em] text-silver/40 font-bold text-xs" style={{ fontFamily: "var(--font-barlow-condensed)" }}>
-              Escucha o Adquirir Copia Digital:
+              Escuchar o Adquirir Copia Digital:
             </span>
             <div className="grid gap-3">
               {PLATFORMS.map((platform) => (
@@ -167,7 +167,7 @@ export default function Home() {
           </h2>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2 w-full">
+        <div className="grid gap-8 md:grid-cols-3 w-full">
           <div className="w-full aspect-video border border-silver/10 bg-black shadow-[0_0_30px_rgba(0,0,0,0.8)]">
             <iframe
               className="w-full h-full"
@@ -183,6 +183,16 @@ export default function Home() {
               className="w-full h-full"
               src="https://www.youtube.com/embed/kT_Nc2XzLaA?si=6EgeLVgwLF8VoDYw"
               title="ULFUR - Video Oficial 2"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            />
+          </div>
+          <div className="w-full aspect-video border border-silver/10 bg-black shadow-[0_0_30px_rgba(0,0,0,0.8)]">
+            <iframe
+              className="w-full h-full"
+              src="https://www.youtube.com/embed/b-uhEJ7j2ic?si=BaV6dQbdHnosXFD3"
+              title="ULFUR - Video Oficial 3"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen

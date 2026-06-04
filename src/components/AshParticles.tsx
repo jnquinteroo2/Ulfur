@@ -1,17 +1,22 @@
 "use client";
 
-import { useMemo } from "react";
+import { useEffect, useState, useMemo } from "react";
 
 const PARTICLE_COUNT = 50;
 
 export default function AshParticles() {
-  const prefersReducedMotion =
-    typeof window !== "undefined"
-      ? window.matchMedia("(prefers-reduced-motion: reduce)").matches
-      : false;
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const particles = useMemo(() => {
+    if (!mounted) return [];
+    
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (prefersReducedMotion) return [];
+
     return Array.from({ length: PARTICLE_COUNT }, (_, i) => {
       const size = `${1 + Math.random() * 2}px`;
       return {
@@ -23,7 +28,9 @@ export default function AshParticles() {
         height: size,
       };
     });
-  }, [prefersReducedMotion]);
+  }, [mounted]);
+
+  if (!mounted) return null;
 
   return (
     <div

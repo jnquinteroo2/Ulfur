@@ -5,21 +5,34 @@ import ScrollReveal from "@/components/ScrollReveal";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 const GALLERY_IMAGES = [
-  { id: 1, url: "https://res.cloudinary.com/dfkd8tzhs/image/upload/q_auto/f_auto/v1780508901/Grupal_2_ytmm2g.jpg", alt: "ULFUR en vivo 1" },
-  { id: 2, url: "https://res.cloudinary.com/dfkd8tzhs/image/upload/q_auto/f_auto/v1780511801/Gemini_Generated_Image_ljnj9ljnj9ljnj9l_lygsom.jpg", alt: "ULFUR arte oficial" },
-  { id: 3, url: "https://res.cloudinary.com/dfkd8tzhs/image/upload/q_auto/f_auto/v1780508446/IMG_7056_ifa9ks.png", alt: "Miguel Zea" },
-  { id: 4, url: "https://res.cloudinary.com/dfkd8tzhs/image/upload/q_auto/f_auto/v1780508447/IMG_7034_jpwyms.png", alt: "Nicolás Quintero" },
-  { id: 5, url: "https://res.cloudinary.com/dfkd8tzhs/image/upload/q_auto/f_auto/v1780508450/IMG_7050_wcedt5.png", alt: "Norman Avendaño" },
-  { id: 6, url: "https://res.cloudinary.com/dfkd8tzhs/image/upload/q_auto/f_auto/v1780508452/IMG_7030_c2s2x4.png", alt: "Juan Fiquitiva" },
-  { id: 7, url: "https://res.cloudinary.com/dfkd8tzhs/image/upload/q_auto/f_auto/v1780508901/Grupal_2_ytmm2g.jpg", alt: "ULFUR en vivo 2" },
-  { id: 8, url: "https://res.cloudinary.com/dfkd8tzhs/image/upload/q_auto/f_auto/v1780511801/Gemini_Generated_Image_ljnj9ljnj9ljnj9l_lygsom.jpg", alt: "ULFUR propaganda" },
-  { id: 9, url: "https://res.cloudinary.com/dfkd8tzhs/image/upload/q_auto/f_auto/v1780508446/IMG_7056_ifa9ks.png", alt: "ULFUR sesión foto 1" },
-  { id: 10, url: "https://res.cloudinary.com/dfkd8tzhs/image/upload/q_auto/f_auto/v1780508447/IMG_7034_jpwyms.png", alt: "ULFUR sesión foto 2" },
-  { id: 11, url: "https://res.cloudinary.com/dfkd8tzhs/image/upload/q_auto/f_auto/v1780508450/IMG_7050_wcedt5.png", alt: "ULFUR sesión foto 3" },
-  { id: 12, url: "https://res.cloudinary.com/dfkd8tzhs/image/upload/q_auto/f_auto/v1780508452/IMG_7030_c2s2x4.png", alt: "ULFUR sesión foto 4" },
-  { id: 13, url: "https://res.cloudinary.com/dfkd8tzhs/image/upload/q_auto/f_auto/v1780508901/Grupal_2_ytmm2g.jpg", alt: "ULFUR en vivo 3" },
-  { id: 14, url: "https://res.cloudinary.com/dfkd8tzhs/image/upload/q_auto/f_auto/v1780511801/Gemini_Generated_Image_ljnj9ljnj9ljnj9l_lygsom.jpg", alt: "ULFUR tras bambalinas" },
-  { id: 15, url: "https://res.cloudinary.com/dfkd8tzhs/image/upload/v1780508454/55aac0df-629d-49a8-9ff7-23a9b74f89c7_grqrzi.jpg", alt: "Mateo González" }
+  { id: 1, url: "https://res.cloudinary.com/dfkd8tzhs/image/upload/q_auto/f_auto/v1780537420/IMG_7060_u8kya2.png"},
+  { id: 2, url: "https://res.cloudinary.com/dfkd8tzhs/image/upload/q_auto/f_auto/v1780536819/IMG_7051_apnf6e.png"},
+  { id: 3, url: "https://res.cloudinary.com/dfkd8tzhs/image/upload/q_auto/f_auto/v1780536800/Grupal_w2gzgs.jpg"},
+  { id: 4, url: "https://res.cloudinary.com/dfkd8tzhs/image/upload/q_auto/f_auto/v1780536742/WhatsApp_Image_2026-06-03_at_20.12.09_l7hoo5.jpg"},
+  { id: 5, url: "https://res.cloudinary.com/dfkd8tzhs/image/upload/q_auto/f_auto/v1780537154/412324581_1023003722230128_4623510403147703758_n_xfkzjp.jpg"},
+  { id: 6, url: "https://res.cloudinary.com/dfkd8tzhs/image/upload/q_auto/f_auto/v1780537178/433865174_1082106306319869_2603426318084516048_n_pumq4d.jpg"},
+  { id: 7, url: "https://res.cloudinary.com/dfkd8tzhs/image/upload/q_auto/f_auto/v1780536781/IMG_7368_c50zng.jpg"},
+  { id: 8, url: "https://res.cloudinary.com/dfkd8tzhs/image/upload/q_auto/f_auto/v1780536774/IMG_7399_1_nmrtfv.jpg"},
+  { id: 9, url: "https://res.cloudinary.com/dfkd8tzhs/image/upload/q_auto/f_auto/v1780536736/485086414_1317761829420981_5209864013791898604_n_qs0lf1.jpg"},
+  { id: 10, url: "https://res.cloudinary.com/dfkd8tzhs/image/upload/q_auto/f_auto/v1780536787/IMG_7065_inmhih.png"},
+  { id: 11, url: "https://res.cloudinary.com/dfkd8tzhs/image/upload/q_auto/f_auto/v1780536761/IMG-20231220-WA0015_decopx.jpg"},
+  { id: 12, url: "https://res.cloudinary.com/dfkd8tzhs/image/upload/q_auto/f_auto/v1780536767/FB_IMG_1706023134236_uulgws.jpg"},
+  { id: 13, url: "https://res.cloudinary.com/dfkd8tzhs/image/upload/q_auto/f_auto/v1780536755/IMG-20231220-WA0020_wrrrd1.jpg"},
+  { id: 14, url: "https://res.cloudinary.com/dfkd8tzhs/image/upload/q_auto/f_auto/v1780536806/20240414063828_IMG_1733_xv89ti.jpg"},
+  { id: 15, url: "https://res.cloudinary.com/dfkd8tzhs/image/upload/q_auto/f_auto/v1780536813/20240414063315_IMG_1721_enugco.jpg"},
+  { id: 16, url: "https://res.cloudinary.com/dfkd8tzhs/image/upload/q_auto/f_auto/v1780537092/IMG_7040_cxl53e.png"},
+  { id: 17, url: "https://res.cloudinary.com/dfkd8tzhs/image/upload/q_auto/f_auto/v1780537112/IMG_3740_bjdkm3.jpg"},
+  { id: 18, url: "https://res.cloudinary.com/dfkd8tzhs/image/upload/q_auto/f_auto/v1780537105/IMG_7061_zjgdza.png"},
+  { id: 19, url: "https://res.cloudinary.com/dfkd8tzhs/image/upload/q_auto/f_auto/v1780537133/IMG_7053_bmpv5p.png"},
+  { id: 20, url: "https://res.cloudinary.com/dfkd8tzhs/image/upload/q_auto/f_auto/v1780537119/20240414061838_IMG_1575_neqeur.jpg"},
+  { id: 21, url: "https://res.cloudinary.com/dfkd8tzhs/image/upload/q_auto/f_auto/v1780537092/IMG_7040_cxl53e.png"},
+  { id: 22, url: "https://res.cloudinary.com/dfkd8tzhs/image/upload/q_auto/f_auto/v1780536793/IMG_3833_qkhvhw.jpg"},
+  { id: 23, url: "https://res.cloudinary.com/dfkd8tzhs/image/upload/q_auto/f_auto/v1780536748/Screenshot_20231220_173748_Gallery_wrwm4x.jpg"},
+  { id: 24, url: "https://res.cloudinary.com/dfkd8tzhs/image/upload/q_auto/f_auto/v1780537187/484351399_1317761809420983_4129130691409625882_n_khm6py.jpg"},
+  { id: 25, url: "https://res.cloudinary.com/dfkd8tzhs/image/upload/q_auto/f_auto/v1780537236/484812953_1317646679432496_6656370805741560852_n_rirvnm.jpg"},
+  { id: 26, url: "https://res.cloudinary.com/dfkd8tzhs/image/upload/q_auto/f_auto/v1780537140/72044113_135060104490495_5238529000560656384_n_d7hmps.jpg"},
+  { id: 27, url: "https://res.cloudinary.com/dfkd8tzhs/image/upload/q_auto/f_auto/v1780537147/480668359_1302724644258033_6293099265512299235_n_ucagoy.jpg"},
+  { id: 28, url: "https://res.cloudinary.com/dfkd8tzhs/image/upload/q_auto/f_auto/v1780537098/IMG_3797_z3drhr.jpg"}
 ];
 
 export default function GalleryPage() {
@@ -62,7 +75,7 @@ export default function GalleryPage() {
           </ScrollReveal>
         </div>
 
-        <div className="relative z-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="relative z-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
           {GALLERY_IMAGES.map((img, i) => (
             <ScrollReveal key={img.id} delay={i * 0.05}>
               <div 
@@ -71,11 +84,11 @@ export default function GalleryPage() {
               >
                 <img 
                   src={img.url} 
-                  alt={img.alt} 
-                  className="h-full w-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105"
+                  alt={`Fotografía ${i + 1} de la galería`} 
+                  className="h-full w-full object-cover grayscale opacity-80 transition-all duration-500 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-black/40 opacity-100 group-hover:opacity-0 transition-opacity duration-300 flex items-center justify-center">
-                  <span className="text-[10px] uppercase tracking-[0.2em] text-silver/40 font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/80 px-3 py-1.5 border border-silver/10">
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
+                  <span className="text-[10px] uppercase tracking-[0.2em] text-silver font-bold bg-black/80 px-3 py-1.5 border border-silver/20">
                     Expandir
                   </span>
                 </div>
@@ -105,14 +118,14 @@ export default function GalleryPage() {
             <ChevronLeft size={24} />
           </button>
 
-          <div className="relative max-w-4xl w-full max-h-[75vh] flex flex-col items-center justify-center px-4">
+          <div className="relative max-w-4xl w-full max-h-[75vh] flex flex-col items-center justify-center px-4 pointer-events-none">
             <img 
               src={GALLERY_IMAGES[activeIndex].url} 
-              alt={GALLERY_IMAGES[activeIndex].alt} 
-              className="max-w-full max-h-[75vh] object-contain border border-silver/10 shadow-[0_0_50px_rgba(0,0,0,0.9)]"
+              alt={`Fotografía ${activeIndex + 1}`} 
+              className="max-w-full max-h-[75vh] object-contain border border-silver/10 shadow-[0_0_50px_rgba(0,0,0,0.9)] pointer-events-auto"
             />
-            <p className="mt-4 text-xs tracking-widest text-silver/40 uppercase" style={{ fontFamily: "var(--font-barlow-condensed)" }}>
-              {GALLERY_IMAGES[activeIndex].alt} — {activeIndex + 1} / {GALLERY_IMAGES.length}
+            <p className="mt-4 text-xs tracking-widest text-silver/40 uppercase font-bold" style={{ fontFamily: "var(--font-barlow-condensed)" }}>
+              {activeIndex + 1} / {GALLERY_IMAGES.length}
             </p>
           </div>
 

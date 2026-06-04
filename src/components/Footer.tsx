@@ -23,7 +23,7 @@ export default function Footer() {
 
         <div className="flex max-w-2xl flex-col items-center gap-1.5 text-center text-base tracking-wide text-silver/60 select-text md:text-lg">
           <p>
-            &copy; {new Date().getFullYear()} ULFUR &mdash; Mosquera, Cundinamarca &mdash; Warframe Records
+            ULFUR &mdash; Mosquera, Cundinamarca &mdash; Warframe Records
           </p>
           <p
             className="text-xs font-medium uppercase italic tracking-widest text-silver/40 md:text-sm"
@@ -31,7 +31,10 @@ export default function Footer() {
               fontFamily: "var(--font-barlow-condensed)",
             }}
           >
-            Black · Death · Thrash Metal Underground
+            Thrash · Black · Death · Metal Underground
+          </p>
+          <p>
+            &copy; {new Date().getFullYear()}
           </p>
         </div>
       </div>

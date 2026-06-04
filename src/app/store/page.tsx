@@ -175,7 +175,7 @@ export default function StorePage() {
       <section className="grain relative mx-auto max-w-7xl px-6 pt-4 pb-32 md:pb-40">
         <div className="relative z-10 flex justify-between items-end mb-16">
           <ScrollReveal>
-            <p className="section-subheading mb-2">Suministros</p>
+            <p className="section-subheading mb-2">Merchandise</p>
             <h1 className="section-heading">Mercancía Oficial</h1>
           </ScrollReveal>
 

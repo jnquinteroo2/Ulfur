@@ -54,6 +54,19 @@ export default function ShowsPage() {
           </ScrollReveal>
           <div className="grid gap-12 lg:grid-cols-2">
             <div className="space-y-8">
+              <ScrollReveal delay={0.05}>
+                <div className="relative aspect-video w-full overflow-hidden border border-silver/10 bg-black shadow-[0_0_30px_rgba(0,0,0,0.5)]">
+                  <iframe
+                    className="absolute inset-0 h-full w-full"
+                    src="https://www.youtube.com/embed/lG4qAWc5jBo?si=3zRoOsva5HlYI_Mg&autoplay=1&mute=1"
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+              </ScrollReveal>
               <ScrollReveal delay={0.1}>
                 <div className="border border-silver/10 bg-ash/10 p-8 text-center">
                   <h3
