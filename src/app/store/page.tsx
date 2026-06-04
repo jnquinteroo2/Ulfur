@@ -97,7 +97,7 @@ export default function StorePage() {
 
   const addToCart = (product: Product, size?: string, color?: string) => {
     const cartId = `${product.id}-${size || "ns"}-${color || "nc"}`;
-    
+
     setCart((prev) => {
       const existing = prev.find((item) => item.cartId === cartId);
       if (existing) {
@@ -151,7 +151,7 @@ export default function StorePage() {
       if (item.size) details.push(`Talla: ${item.size}`);
       if (item.color) details.push(`Color: ${item.color}`);
       const detailsStr = details.length > 0 ? ` (${details.join(", ")})` : "";
-      
+
       message += `- ${item.quantity}x ${item.name}${detailsStr}\n`;
     });
 
@@ -194,11 +194,11 @@ export default function StorePage() {
 
         <div className="relative z-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {MERCHANDISE.map((product, i) => (
-            <ProductCard 
-              key={product.id} 
-              product={product} 
-              delay={i * 0.1} 
-              onAddToCart={addToCart} 
+            <ProductCard
+              key={product.id}
+              product={product}
+              delay={i * 0.1}
+              onAddToCart={addToCart}
               onImageClick={setPreviewImage}
             />
           ))}
@@ -207,11 +207,11 @@ export default function StorePage() {
 
       {isCartOpen && (
         <div className="fixed inset-0 z-50 flex justify-end">
-          <div 
-            className="absolute inset-0 bg-black/80 backdrop-blur-sm" 
+          <div
+            className="absolute inset-0 bg-black/80 backdrop-blur-sm"
             onClick={() => setIsCartOpen(false)}
           />
-          
+
           <div className="relative w-full max-w-md bg-void border-l border-silver/10 h-full flex flex-col shadow-2xl">
             <div className="flex items-center justify-between border-b border-silver/10 p-6">
               <h2 className="text-xl text-silver/80 uppercase tracking-widest" style={{ fontFamily: "var(--font-cinzel)" }}>
@@ -248,7 +248,7 @@ export default function StorePage() {
                       <button onClick={() => removeFromCart(item.cartId)} className="text-silver/30 hover:text-red-500 transition-colors">
                         <Trash2 size={16} />
                       </button>
-                      
+
                       <div className="flex items-center border border-silver/10 bg-black mt-4">
                         <button onClick={() => updateQuantity(item.cartId, -1)} className="p-1.5 text-silver/50 hover:text-white">
                           <Minus size={12} />
@@ -269,7 +269,7 @@ export default function StorePage() {
                 <span className="text-silver/50 uppercase tracking-widest text-sm" style={{ fontFamily: "var(--font-barlow-condensed)" }}>Total</span>
                 <span className="text-xl text-silver/90 font-bold tracking-widest">{formatPrice(cartTotal)}</span>
               </div>
-              
+
               <button
                 onClick={checkout}
                 disabled={cart.length === 0}
@@ -287,15 +287,15 @@ export default function StorePage() {
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/90 backdrop-blur-md">
           <div className="absolute inset-0" onClick={() => setPreviewImage(null)} />
           <div className="relative max-w-3xl w-full max-h-[80vh] flex items-center justify-center">
-            <button 
-              onClick={() => setPreviewImage(null)} 
+            <button
+              onClick={() => setPreviewImage(null)}
               className="absolute -top-12 right-0 text-silver/60 hover:text-white transition-colors bg-black/50 p-2 border border-silver/10 rounded-none"
             >
               <X size={24} />
             </button>
-            <img 
-              src={previewImage} 
-              alt="Vista ampliada" 
+            <img
+              src={previewImage}
+              alt="Vista ampliada"
               className="max-w-full max-h-[80vh] object-contain border border-silver/10"
             />
           </div>
@@ -305,14 +305,14 @@ export default function StorePage() {
   );
 }
 
-function ProductCard({ 
-  product, 
-  delay, 
-  onAddToCart, 
-  onImageClick 
-}: { 
-  product: Product; 
-  delay: number; 
+function ProductCard({
+  product,
+  delay,
+  onAddToCart,
+  onImageClick
+}: {
+  product: Product;
+  delay: number;
   onAddToCart: (p: Product, s?: string, c?: string) => void;
   onImageClick: (url: string) => void;
 }) {
@@ -336,13 +336,13 @@ function ProductCard({
             </span>
           </div>
 
-          <div 
+          <div
             onClick={() => onImageClick(product.image)}
             className="aspect-square w-full border border-silver/5 bg-black/40 flex items-center justify-center mb-6 relative overflow-hidden cursor-pointer"
           >
-            <img 
-              src={product.image} 
-              alt={product.name} 
+            <img
+              src={product.image}
+              alt={product.name}
               className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
             <div className="absolute inset-x-0 bottom-0 py-1 bg-black/80 border-t border-silver/5 text-center">
@@ -358,18 +358,18 @@ function ProductCard({
 
           <div className="mt-4 flex flex-col gap-2">
             {product.sizes && (
-              <select 
-                value={selectedSize} 
+              <select
+                value={selectedSize}
                 onChange={(e) => setSelectedSize(e.target.value)}
                 className="bg-black/50 border border-silver/10 text-silver/60 text-xs p-2 outline-none focus:border-red-900 uppercase tracking-wider"
               >
                 {product.sizes.map(size => <option key={size} value={size}>Talla {size}</option>)}
               </select>
             )}
-            
+
             {product.colors && (
-              <select 
-                value={selectedColor} 
+              <select
+                value={selectedColor}
                 onChange={(e) => setSelectedColor(e.target.value)}
                 className="bg-black/50 border border-silver/10 text-silver/60 text-xs p-2 outline-none focus:border-red-900 uppercase tracking-wider"
               >
@@ -379,16 +379,16 @@ function ProductCard({
           </div>
         </div>
 
-        <div className="mt-6 pt-4 border-t border-silver/5 flex items-center justify-between">
-          <span className="text-silver/50 font-bold text-sm" style={{ fontFamily: "var(--font-barlow-condensed)" }}>
+        <div className="mt-6 pt-4 border-t border-silver/5 flex flex-col gap-3">
+          <span className="text-silver/80 font-bold text-xl tracking-widest" style={{ fontFamily: "var(--font-barlow-condensed)" }}>
             {formatPrice(product.price)}
           </span>
-          <button 
+          <button
             onClick={handleAdd}
-            className="text-[10px] uppercase tracking-wider font-bold text-silver/30 hover:text-red-600 transition-colors"
+            className="w-full bg-red-900/80 hover:bg-red-700 text-white text-[11px] uppercase tracking-widest font-bold py-2.5 transition-colors"
             style={{ fontFamily: "var(--font-barlow-condensed)" }}
           >
-            Añadir +
+            Añadir al carrito
           </button>
         </div>
       </div>

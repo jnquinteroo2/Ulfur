@@ -1,5 +1,19 @@
 import { SOCIALS } from "@/constants/socials";
 
+const getSocialHoverClass = (label: string) => {
+  const lower = label.toLowerCase();
+  
+  if (lower.includes("instagram")) return "hover:text-[#E1306C]";
+  if (lower.includes("facebook")) return "hover:text-[#1877F2]";
+  if (lower.includes("youtube")) return "hover:text-[#FF0000]";
+  if (lower.includes("spotify")) return "hover:text-[#1DB954]";
+  if (lower.includes("apple")) return "hover:text-[#FA243C]";
+  if (lower.includes("bandcamp")) return "hover:text-[#629AA9]";
+  if (lower.includes("tiktok") || lower.includes("tik tok")) return "hover:text-[#FF0050]";
+
+  return "hover:text-white";
+};
+
 export default function Footer() {
   const footerSocials = SOCIALS.filter((s) => s.icon);
 
@@ -13,7 +27,7 @@ export default function Footer() {
               href={social.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-silver/40 transition-colors duration-200 hover:text-white"
+              className={`text-silver/40 transition-colors duration-300 ${getSocialHoverClass(social.label)}`}
               aria-label={`Ir a ${social.label}`}
             >
               {social.icon}

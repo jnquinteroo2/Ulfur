@@ -20,6 +20,20 @@ const getSocialIcon = (label: string) => {
   return <FiMusic size={14} className="flex-shrink-0" />;
 };
 
+const getSocialHoverClass = (label: string) => {
+  const lower = label.toLowerCase();
+  
+  if (lower.includes("instagram")) return "hover:text-[#E1306C]";
+  if (lower.includes("facebook")) return "hover:text-[#1877F2]";
+  if (lower.includes("youtube")) return "hover:text-[#FF0000]";
+  if (lower.includes("spotify")) return "hover:text-[#1DB954]";
+  if (lower.includes("apple")) return "hover:text-[#FA243C]";
+  if (lower.includes("bandcamp")) return "hover:text-[#629AA9]";
+  if (lower.includes("tiktok") || lower.includes("tik tok")) return "hover:text-[#FF0050]";
+
+  return "hover:text-white";
+};
+
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   const [isSending, setIsSending] = useState(false);
@@ -197,17 +211,34 @@ export default function ContactPage() {
                         <FiMail size={16} className="flex-shrink-0 text-silver/40" />
                         <a
                           href="mailto:svarturulfur5@gmail.com"
-                          className="text-silver/50 transition-colors hover:text-white"
+                          className="text-silver/50 transition-colors duration-300 hover:text-white"
                           aria-label="Enviar email a svarturulfur5@gmail.com"
                         >
                           svarturulfur5@gmail.com
                         </a>
                       </div>
-                      <div className="flex items-center gap-3">
-                        <FiPhone size={16} className="flex-shrink-0 text-silver/40" />
-                        <span className="text-silver/50">
-                          3046297470 / 3163048406
-                        </span>
+                      <div className="flex items-start gap-3">
+                        <FiPhone size={16} className="flex-shrink-0 text-silver/40 mt-1" />
+                        <div className="flex flex-col gap-2">
+                          <a
+                            href="https://wa.me/573046297470"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-silver/50 transition-colors duration-300 hover:text-[#25D366]"
+                            aria-label="Contactar al 3046297470 vía WhatsApp"
+                          >
+                            +57 304 629 7470
+                          </a>
+                          <a
+                            href="https://wa.me/573163048406"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-silver/50 transition-colors duration-300 hover:text-[#25D366]"
+                            aria-label="Contactar al 3163048406 vía WhatsApp"
+                          >
+                            +57 316 304 8406
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -233,7 +264,7 @@ export default function ContactPage() {
                         href={social.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-3 text-silver/40 transition-colors hover:text-white"
+                        className={`flex items-center gap-3 text-silver/40 transition-colors duration-300 ${getSocialHoverClass(social.label)}`}
                         aria-label={`Ir a ${social.label}`}
                       >
                         {getSocialIcon(social.label)}
