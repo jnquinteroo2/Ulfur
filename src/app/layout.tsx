@@ -29,9 +29,9 @@ const crimsonText = Crimson_Text({
 });
 
 export const metadata: Metadata = {
-  title: "ULFUR — Black · Death · Thrash Metal",
+  title: "ULFUR — Thrash · Black · Death Metal",
   description:
-    "Banda de Black / Death / Thrash Metal desde Mosquera, Cundinamarca, Colombia. Conoce nuestra música, historia y próximas fechas.",
+    "Banda de Thrash / Black / Death Metal desde Mosquera, Cundinamarca, Colombia. Conoce nuestra música, historia y próximas fechas.",
   keywords: [
     "Ulfur",
     "Black Metal",
@@ -43,9 +43,9 @@ export const metadata: Metadata = {
     "Círculo de Fuego",
   ],
   openGraph: {
-    title: "ULFUR — Black · Death · Thrash Metal",
+    title: "ULFUR — Thrash · Black · Death Metal",
     description:
-      "Desde las entrañas de Cundinamarca. Black / Death / Thrash Metal.",
+      "Desde las entrañas de Cundinamarca. Thrash / Black / Death Metal.",
     type: "website",
     locale: "es_CO",
   },

@@ -1,6 +1,6 @@
 # ULFUR — Sitio Web Oficial
 
-Sitio web oficial de la banda ULFUR (Black / Death / Thrash Metal) desde Mosquera, Cundinamarca, Colombia.
+Sitio web oficial de la banda ULFUR (Thrash / Black / Death Metal) desde Mosquera, Cundinamarca, Colombia.
 
 ## Stack Tecnológico
 
@@ -37,18 +37,18 @@ Abrir [http://localhost:3000](http://localhost:3000) en el navegador.
 npm run build
 ```
 
-## Despliegue en Vercel
+## Despliegue en Cloudflare
 
 ### Desde la CLI
 
 ```bash
-npm i -g vercel
-vercel
+npm i -g cloudflare
+cloudflare
 ```
 
 ### Desde el Dashboard
 
-1. Conectar el repositorio en [vercel.com](https://vercel.com)
+1. Conectar el repositorio en [cloudflare.com](https://cloudflare.com)
 2. Seleccionar el framework: **Next.js**
 3. Build command: `next build`
 4. Output directory: `.next`
