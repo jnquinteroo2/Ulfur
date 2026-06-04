@@ -83,7 +83,7 @@ export default function DiscographyPage() {
               delay={i * 0.15}
             >
               <div
-                className={`group relative overflow-hidden bg-ash/10 border border-silver/10 transition-all duration-300 h-full flex flex-col ${
+                className={`group/card relative overflow-hidden bg-ash/10 border border-silver/10 transition-all duration-300 h-full flex flex-col ${
                   release.featured
                     ? "hover:border-silver"
                     : "hover:border-silver/20"
@@ -161,33 +161,46 @@ export default function DiscographyPage() {
                   {release.tracks.length > 0 && (
                     <div className="mt-auto space-y-1 border-t border-silver/10 pt-4">
                       {release.tracks.map((track, j) => (
-                        <div
-                          key={track.name}
-                          className="flex items-center justify-between"
-                          style={{ fontSize: "var(--text-small)" }}
-                        >
-                          <span className="text-silver/40">
-                            <span
-                              className="mr-2 tabular-nums text-silver/15"
-                              style={{ fontSize: "var(--text-badge)" }}
-                            >
-                              {String(j + 1).padStart(2, "0")}
-                            </span>
-                            {track.name}
-                          </span>
-                          
-                          {track.url && (
+                        <div key={track.name}>
+                          {track.url ? (
                             <a
                               href={track.url}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="text-silver/30 hover:text-[#1DB954] transition-colors flex items-center"
+                              className="group flex items-center justify-between transition-colors cursor-pointer"
+                              style={{ fontSize: "var(--text-small)" }}
                               title={`Escuchar ${track.name} en Spotify`}
                             >
-                              <svg viewBox="0 0 24 24" className="w-4 h-4" fill="currentColor">
-                                <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm5.503 17.306c-.215.353-.678.463-1.03.249-2.856-1.744-6.452-2.134-10.683-1.17-.407.092-.816-.164-.908-.571-.092-.408.164-.817.572-.91 4.63-1.054 8.59-.6 11.78 1.345.353.214.464.678.249 1.031zm1.467-3.262c-.272.443-.85.59-1.294.318-3.268-2.01-8.254-2.592-12.12-1.42-.497.15-1.022-.13-1.172-.627-.15-.497.13-1.023.627-1.173 4.415-1.34 9.91-.694 13.643 1.6.444.273.59.852.317 1.296l-.001.006zm.126-3.393C15.424 8.314 9.364 8.113 5.86 9.176c-.563.17-1.157-.147-1.328-.712-.17-.563.147-1.156.712-1.328 4.026-1.222 10.722-1.002 14.94 1.505.507.301.673.957.372 1.464-.301.507-.957.673-1.464.372z" />
-                              </svg>
+                              <span className="text-silver/40 transition-colors group-hover:text-white">
+                                <span
+                                  className="mr-2 tabular-nums text-silver/15 transition-colors group-hover:text-[#1DB954]"
+                                  style={{ fontSize: "var(--text-badge)" }}
+                                >
+                                  {String(j + 1).padStart(2, "0")}
+                                </span>
+                                {track.name}
+                              </span>
+                              <span className="text-silver/30 transition-colors group-hover:text-[#1DB954] flex items-center">
+                                <svg viewBox="0 0 24 24" className="w-4 h-4" fill="currentColor">
+                                  <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm5.503 17.306c-.215.353-.678.463-1.03.249-2.856-1.744-6.452-2.134-10.683-1.17-.407.092-.816-.164-.908-.571-.092-.408.164-.817.572-.91 4.63-1.054 8.59-.6 11.78 1.345.353.214.464.678.249 1.031zm1.467-3.262c-.272.443-.85.59-1.294.318-3.268-2.01-8.254-2.592-12.12-1.42-.497.15-1.022-.13-1.172-.627-.15-.497.13-1.023.627-1.173 4.415-1.34 9.91-.694 13.643 1.6.444.273.59.852.317 1.296l-.001.006zm.126-3.393C15.424 8.314 9.364 8.113 5.86 9.176c-.563.17-1.157-.147-1.328-.712-.17-.563.147-1.156.712-1.328 4.026-1.222 10.722-1.002 14.94 1.505.507.301.673.957.372 1.464-.301.507-.957.673-1.464.372z" />
+                                </svg>
+                              </span>
                             </a>
+                          ) : (
+                            <div
+                              className="flex items-center justify-between"
+                              style={{ fontSize: "var(--text-small)" }}
+                            >
+                              <span className="text-silver/40">
+                                <span
+                                  className="mr-2 tabular-nums text-silver/15"
+                                  style={{ fontSize: "var(--text-badge)" }}
+                                >
+                                  {String(j + 1).padStart(2, "0")}
+                                </span>
+                                {track.name}
+                              </span>
+                            </div>
                           )}
                         </div>
                       ))}

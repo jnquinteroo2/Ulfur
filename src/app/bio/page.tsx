@@ -11,6 +11,7 @@ export default function BioPage() {
             <p className="section-subheading mb-2">Biografía</p>
             <h1 className="section-heading mb-12">La Historia</h1>
           </ScrollReveal>
+          
           <div className="grid gap-12 lg:grid-cols-2">
             <div className="space-y-6">
               <ScrollReveal delay={0.1}>
@@ -37,7 +38,7 @@ export default function BioPage() {
                   <p>
                     La banda se formó con la visión de crear música extrema que
                     explorara temáticas de violencia, salud mental, dolor y hechos
-                    históricos, reflejando las realidades and el sufrimiento que marcan la
+                    históricos, reflejando las realidades y el sufrimiento que marcan la
                     existencia humana.
                   </p>
                   <p>
@@ -56,81 +57,83 @@ export default function BioPage() {
                 </div>
               </ScrollReveal>
             </div>
+            
             <ScrollReveal delay={0.3}>
-              <div className="space-y-8">
-                <div className="relative aspect-[4/5] w-full overflow-hidden bg-ash/10 border border-silver/10 grain">
-                  <img
-                    src="https://res.cloudinary.com/dfkd8tzhs/image/upload/q_auto/f_auto/v1780508901/Grupal_2_ytmm2g.jpg"
-                    alt="ULFUR Banda"
-                    className="h-full w-full object-cover grayscale transition-all duration-500 hover:grayscale-0"
-                  />
-                </div>
-                <div className="space-y-4">
-                  <h3
-                    className="uppercase tracking-[0.2em] text-silver/40"
-                    style={{
-                      fontFamily: "var(--font-barlow-condensed)",
-                      fontSize: "var(--text-small)",
-                    }}
-                  >
-                    Línea de Tiempo
-                  </h3>
-                  <div className="relative border-l border-silver/10 pl-6 space-y-6">
-                    {[
-                      {
-                        year: "2015",
-                        title: "Fundación",
-                        desc: "ULFUR se forma en Mosquera, Cundinamarca.",
-                      },
-                      {
-                        year: "2015",
-                        title: "Rencor Demo",
-                        desc: "Primer demo grabado en Mad House Studio. Incluye Cacería y Rencor.",
-                      },
-                      {
-                        year: "2017",
-                        title: "Ulfur Demo",
-                        desc: "Segundo demo en Área 51 Studio. Incluye La Gaitana, Rencor y Cacería.",
-                      },
-                      {
-                        year: "2022",
-                        title: "Círculo de Fuego EP",
-                        desc: "Lanzamiento con Warframe Records (New York). Cassette, CD y digital.",
-                      },
-                    ].map((item, i) => (
-                      <div key={i} className="relative">
-                        <div className="absolute -left-[25px] top-1 h-3 w-3 rounded-full border-2 border-silver/10 bg-void" />
-                        <span
-                          className="font-bold uppercase tracking-widest text-silver/60"
-                          style={{
-                            fontFamily: "var(--font-barlow-condensed)",
-                            fontSize: "var(--text-badge)",
-                          }}
-                        >
-                          {item.year}
-                        </span>
-                        <h4
-                          className="mt-1 text-silver/80"
-                          style={{
-                            fontFamily: "var(--font-cinzel)",
-                            fontSize: "var(--text-h3)",
-                          }}
-                        >
-                          {item.title}
-                        </h4>
-                        <p
-                          className="mt-1 text-silver/40"
-                          style={{ fontSize: "var(--text-small)" }}
-                        >
-                          {item.desc}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+              <div className="relative aspect-[4/5] w-full overflow-hidden bg-ash/10 border border-silver/10 grain">
+                <img
+                  src="https://res.cloudinary.com/dfkd8tzhs/image/upload/q_auto/f_auto/v1780508901/Grupal_2_ytmm2g.jpg"
+                  alt="ULFUR Banda"
+                  className="h-full w-full object-cover grayscale transition-all duration-500 hover:grayscale-0"
+                />
               </div>
             </ScrollReveal>
           </div>
+
+          <ScrollReveal delay={0.4}>
+            <div className="mt-16 lg:mt-24 space-y-6">
+              <h3
+                className="uppercase tracking-[0.2em] text-silver/40"
+                style={{
+                  fontFamily: "var(--font-barlow-condensed)",
+                  fontSize: "var(--text-small)",
+                }}
+              >
+                Línea de Tiempo
+              </h3>
+              <div className="relative flex flex-col lg:flex-row border-l lg:border-l-0 lg:border-t border-silver/10 pl-6 lg:pl-0 pt-0 lg:pt-8 gap-8 lg:gap-6">
+                {[
+                  {
+                    year: "2015",
+                    title: "Fundación",
+                    desc: "ULFUR se forma en Mosquera, Cundinamarca.",
+                  },
+                  {
+                    year: "2015",
+                    title: "Rencor Demo",
+                    desc: "Primer demo grabado en Mad House Studio. Incluye Cacería y Rencor.",
+                  },
+                  {
+                    year: "2017",
+                    title: "Ulfur Demo",
+                    desc: "Segundo demo en Área 51 Studio. Incluye La Gaitana, Rencor y Cacería.",
+                  },
+                  {
+                    year: "2022",
+                    title: "Círculo de Fuego EP",
+                    desc: "Lanzamiento con Warframe Records (New York). Cassette, CD y digital.",
+                  },
+                ].map((item, i) => (
+                  <div key={i} className="relative flex-1">
+                    <div className="absolute -left-[30px] top-1 lg:-top-[38px] lg:left-0 h-3 w-3 rounded-full border-2 border-silver/10 bg-void" />
+                    <span
+                      className="font-bold uppercase tracking-widest text-silver/60 block"
+                      style={{
+                        fontFamily: "var(--font-barlow-condensed)",
+                        fontSize: "var(--text-badge)",
+                      }}
+                    >
+                      {item.year}
+                    </span>
+                    <h4
+                      className="mt-1 text-silver/80"
+                      style={{
+                        fontFamily: "var(--font-cinzel)",
+                        fontSize: "var(--text-h3)",
+                      }}
+                    >
+                      {item.title}
+                    </h4>
+                    <p
+                      className="mt-1 text-silver/40"
+                      style={{ fontSize: "var(--text-small)" }}
+                    >
+                      {item.desc}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
     </div>
