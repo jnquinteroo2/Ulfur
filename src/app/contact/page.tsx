@@ -268,14 +268,6 @@ export default function ContactPage() {
               </div>
             </ScrollReveal>
 
-            <ScrollReveal delay={0.4} className="lg:col-start-2 flex justify-end">
-              <img 
-                src="/logo.png" 
-                alt="Ulfur Logo" 
-                className="w-32 md:w-48 opacity-40 grayscale transition-all duration-500 hover:grayscale-0 hover:opacity-100" 
-              />
-            </ScrollReveal>
-
           </div>
         </div>
       </section>
