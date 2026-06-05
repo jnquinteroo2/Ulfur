@@ -1,6 +1,7 @@
 "use client";
 
 import ScrollReveal from "@/components/ScrollReveal";
+import YouTubeFacade from "@/components/YouTubeFacade";
 
 const SHARED_STAGES = [
   { band: "Masacre", country: "Colombia" },
@@ -56,15 +57,11 @@ export default function ShowsPage() {
             <div className="space-y-8">
               <ScrollReveal delay={0.05}>
                 <div className="relative aspect-video w-full overflow-hidden border border-silver/10 bg-black shadow-[0_0_30px_rgba(0,0,0,0.5)]">
-                  <iframe
+                  <YouTubeFacade
                     className="absolute inset-0 h-full w-full"
-                    src="https://www.youtube.com/embed/lG4qAWc5jBo?si=3zRoOsva5HlYI_Mg&autoplay=1&mute=1"
-                    title="YouTube video player"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    allowFullScreen
-                  ></iframe>
+                    videoId="lG4qAWc5jBo"
+                    title="ULFUR - Video en Vivo"
+                  />
                 </div>
               </ScrollReveal>
               <ScrollReveal delay={0.1}>

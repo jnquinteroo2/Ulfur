@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 import AshParticles from "@/components/AshParticles";
+import YouTubeFacade from "@/components/YouTubeFacade";
 
 const PLATFORMS = [
   {
@@ -169,33 +170,24 @@ export default function Home() {
 
         <div className="grid gap-8 md:grid-cols-3 w-full">
           <div className="w-full aspect-video border border-silver/10 bg-black shadow-[0_0_30px_rgba(0,0,0,0.8)]">
-            <iframe
+            <YouTubeFacade
               className="w-full h-full"
-              src="https://www.youtube.com/embed/2chNMmb9Oww?si=xu_7xKz66YVA8E-g"
+              videoId="2chNMmb9Oww"
               title="ULFUR - Video Oficial 1"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
             />
           </div>
           <div className="w-full aspect-video border border-silver/10 bg-black shadow-[0_0_30px_rgba(0,0,0,0.8)]">
-            <iframe
+            <YouTubeFacade
               className="w-full h-full"
-              src="https://www.youtube.com/embed/kT_Nc2XzLaA?si=6EgeLVgwLF8VoDYw"
+              videoId="kT_Nc2XzLaA"
               title="ULFUR - Video Oficial 2"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
             />
           </div>
           <div className="w-full aspect-video border border-silver/10 bg-black shadow-[0_0_30px_rgba(0,0,0,0.8)]">
-            <iframe
+            <YouTubeFacade
               className="w-full h-full"
-              src="https://www.youtube.com/embed/b-uhEJ7j2ic?si=BaV6dQbdHnosXFD3"
+              videoId="b-uhEJ7j2ic"
               title="ULFUR - Video Oficial 3"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
             />
           </div>
         </div>

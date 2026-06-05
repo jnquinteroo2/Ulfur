@@ -120,7 +120,7 @@ export default function AudioPlayer() {
       <audio
         ref={audioRef}
         src={TRACKS[currentTrack].url}
-        preload="auto" 
+        preload="metadata" 
         autoPlay
         onTimeUpdate={handleTimeUpdate}
         onEnded={nextTrack}
@@ -147,7 +147,7 @@ export default function AudioPlayer() {
                 style={{ fontFamily: "var(--font-barlow-condensed)", fontSize: "var(--text-badge)" }}
               >
                 {!isMounted || isBuffering
-                  ? "Preparando asedio..."
+                  ? "Preparando..."
                   : hasError
                   ? `${TRACKS[currentTrack].title} (Error de red)`
                   : TRACKS[currentTrack].title}
