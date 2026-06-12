@@ -13,6 +13,7 @@ type Product = {
   image: string;
   sizes?: string[];
   colors?: string[];
+  badge?: string; 
 };
 
 type CartItem = {
@@ -27,10 +28,31 @@ type CartItem = {
 
 const MERCHANDISE: Product[] = [
   {
-    id: "camiseta-cf",
-    name: "Camiseta Círculo de Fuego",
+    id: "combo",
+    name: "Combo Ulfur",
     type: "Prenda Oficial",
-    price: 55000,
+    price: 120000,
+    tag: "Ulfur",
+    image: "https://res.cloudinary.com/dfkd8tzhs/image/upload/q_auto/f_auto/v1781227980/Gemini_Generated_Image_ttve09ttve09ttve_zwzjyh.jpg",
+    sizes: ["S", "M", "L", "XL"],
+    colors: ["Camiseta Hombre", "Camiseta Mujer"],
+    badge: "Combo",
+  },
+  {
+    id: "camiseta-cfm",
+    name: "Camiseta Ulfur Mujer",
+    type: "Prenda Oficial",
+    price: 60000,
+    tag: "Ulfur",
+    image: "https://res.cloudinary.com/dfkd8tzhs/image/upload/q_auto/f_auto/v1781228747/Gemini_Generated_Image_668r9t668r9t668r_qa2g42.jpg",
+    sizes: ["S", "M", "L", "XL"],
+    colors: ["Negro"],
+  },
+  {
+    id: "camiseta-cf",
+    name: "Camiseta Ulfur Hombre",
+    type: "Prenda Oficial",
+    price: 60000,
     tag: "Ulfur",
     image: "https://res.cloudinary.com/dfkd8tzhs/image/upload/q_auto/f_auto/v1780511801/Gemini_Generated_Image_ljnj9ljnj9ljnj9l_lygsom.jpg",
     sizes: ["S", "M", "L", "XL"],
@@ -38,11 +60,21 @@ const MERCHANDISE: Product[] = [
   },
   {
     id: "gorra-ulfur",
-    name: "Gorra Camionera Bordada",
+    name: "Gorra Bordada",
     type: "Accesorios",
-    price: 35000,
+    price: 50000,
     tag: "Stock Limitado",
     image: "https://res.cloudinary.com/dfkd8tzhs/image/upload/q_auto/f_auto/v1780511812/Gorra_nehevr.jpg",
+    colors: ["Negro"],
+  },
+  {
+    id: "buso",
+    name: "Buso Ulfur",
+    type: "Prenda Oficial",
+    price: 120000,
+    tag: "Ulfur",
+    image: "https://res.cloudinary.com/dfkd8tzhs/image/upload/q_auto/f_auto/v1781227339/Gemini_Generated_Image_yxqoa5yxqoa5yxqo_syem02.jpg",
+    sizes: ["S", "M", "L", "XL"],
     colors: ["Negro"],
   },
   {
@@ -59,7 +91,7 @@ const MERCHANDISE: Product[] = [
     type: "Insumos",
     price: 15000,
     tag: "Grosor 1 mm",
-    image: "https://res.cloudinary.com/dfkd8tzhs/image/upload/q_auto/f_auto/v1780511817/Pick_bww0sh.jpg",
+    image: "https://res.cloudinary.com/dfkd8tzhs/image/upload/q_auto/f_auto/v1781229268/Gemini_Generated_Image_iqao5biqao5biqao_o7iqnq.jpg",
   },
 ];
 
@@ -340,6 +372,13 @@ function ProductCard({
             onClick={() => onImageClick(product.image)}
             className="aspect-square w-full border border-silver/5 bg-black/40 flex items-center justify-center mb-6 relative overflow-hidden cursor-pointer"
           >
+            {/* CINTA DE DESTACADO */}
+            {product.badge && (
+              <div className="absolute top-5 -right-10 w-36 text-center bg-red-700/90 text-white text-[10px] font-bold uppercase tracking-widest py-1.5 rotate-45 z-10 shadow-[0_0_15px_rgba(185,28,28,0.5)]">
+                {product.badge}
+              </div>
+            )}
+            
             <img
               src={product.image}
               alt={product.name}
