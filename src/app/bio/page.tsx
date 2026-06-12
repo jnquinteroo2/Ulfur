@@ -31,28 +31,32 @@ export default function BioPage() {
                 >
                   <p>
                     ULFUR nace en 2015 en Mosquera, Cundinamarca, Colombia, como
-                    una propuesta que fusiona la brutalidad del Death Metal, la
-                    agresividad del Thrash y la oscuridad del Black Metal en un
-                    sonido único y demoledor.
+                    una propuesta que fusiona la agresividad del Thrash, la crudeza del Death Metal, 
+                    y la oscuridad del Black Metal en un
+                    sonido visceral de la vieja escuela del metal extremo, impregnado de sangre y muerte.
                   </p>
                   <p>
-                    La banda se formó con la visión de crear música extrema que
-                    explorara temáticas de violencia, salud mental, dolor y hechos
-                    históricos, reflejando las realidades y el sufrimiento que marcan la
-                    existencia humana.
+                    Forjada a partir de hechos reales, la banda nació con la 
+                    necesidad de crear música extrema que expusiera la violencia, los abismos de la 
+                    salud mental y la crueldad histórica; un reflejo directo del sufrimiento y las realidades que 
+                    marcan la existencia humana.
                   </p>
                   <p>
-                    Desde sus inicios, ULFUR ha mantenido una ética de trabajo
-                    independiente y un compromiso absoluto con la autenticidad del
-                    metal underground. Su sonido se nutre de las raíces más primigenias
-                    del género, evitando las tendencias modernas y manteniéndose fiel
-                    a la vieja escuela.
+              En 2022, la banda distribuyó junto a Warframe Records de New York, su EP{" "}
+              <a 
+                href="https://youtu.be/kT_Nc2XzLaA?si=Rgd0Csw8-cEaPFOL" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-red-600 font-medium hover:text-red-500 transition-colors duration-200"
+              >
+                 &ldquo;Círculo de Fuego&rdquo;
+              </a>
+                 {" "} en formato cassette, CD y plataformas digitales, marcando un hito en su trayectoria y llevando su música a una audiencia internacional.
                   </p>
-                  <p>
-                    En 2022, la banda firmó con Warframe Records de New York,
-                    lanzando su EP &ldquo;Círculo de Fuego&rdquo; en formato cassette, CD y
-                    plataformas digitales, marcando un hito en su trayectoria y llevando
-                    su música a una audiencia internacional.
+                    <p>
+                  Actualmente la banda se encuentra en proceso de grabación de su nuevo álbum con seis canciones inéditas,
+                  en este nuevo trabajo busca plasmar la esencia de la banda, con letras profundas y un sonido contundente.
+                  &ldquo;Ritos de Muerte&rdquo; será lanzado a finales del 2026.
                   </p>
                 </div>
               </ScrollReveal>
